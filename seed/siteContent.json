@@ -1,0 +1,142 @@
+{
+  "portfolio": {
+    "about": {
+      "name": "Alex Rivers",
+      "title": "Full Stack Developer",
+      "email": "hello@arivers.dev",
+      "phone": "+1 (555) 123-4567",
+      "location": "San Francisco, CA"
+    },
+    "summary": {
+      "headline": "Driven Full Stack Architect",
+      "body": "Passionate about building scalable web applications and leading high-performance engineering teams. I specialize in bridging the gap between complex backend systems and intuitive, modern user experiences."
+    },
+    "experience": {
+      "years": "3+ Years",
+      "role": "Full Stack Developer",
+      "footer": "IN-INDUSTRY PROFESSIONAL"
+    },
+    "education": {
+      "degree": "B.S. Computer Science",
+      "school": "Stanford University",
+      "meta": "Class of 2018 • GPA 3.9"
+    },
+    "skills": {
+      "groups": [
+        {
+          "title": "FRONT-END MASTERY",
+          "tags": [
+            "React / Next.js 14",
+            "TypeScript",
+            "Tailwind",
+            "Framer Motion",
+            "Zustand"
+          ]
+        },
+        {
+          "title": "BACK-END & INFRASTRUCTURE",
+          "tags": [
+            "Node.js",
+            "NestJS",
+            "PostgreSQL",
+            "Prisma",
+            "AWS",
+            "Docker"
+          ]
+        },
+        {
+          "title": "MOBILE & BROWSER",
+          "tags": ["Flutter", "Chrome Extension Dev"]
+        }
+      ]
+    },
+    "featuredEco": {
+      "headerLabel": "Featured Project",
+      "title": "Eco-Track Dashboard",
+      "description": "SaaS platform tracking carbon footprints. Built with Next.js and D3.js.",
+      "codeUrl": "https://github.com",
+      "demoUrl": "https://example.com"
+    },
+    "featuredSecure": {
+      "headerLabel": "Project 02",
+      "title": "SecurePay API",
+      "description": "High-throughput payment gateway processing 10k+ req/sec. Node.js & Redis.",
+      "codeUrl": "https://github.com",
+      "demoUrl": "https://example.com"
+    }
+  },
+  "projects": [
+    {
+      "tone": "purple",
+      "subtitle": "Project Alpha",
+      "title": "Hyper-Comm Platform",
+      "description": "Distributed messaging with real-time sync across regions. Kafka and custom WebSockets for low latency.",
+      "tags": ["Node.js", "Express", "Kafka", "WebSockets", "Lambda", "DynamoDB"],
+      "icon": "server"
+    },
+    {
+      "tone": "pink",
+      "subtitle": "Project Beta",
+      "title": "Analytica Pro",
+      "description": "Reporting engine for KPIs with interactive dashboards and deep-dive visualization panels.",
+      "tags": ["React", "D3.js", "Prisma", "PostgreSQL", "Tailwind", "Docker"],
+      "icon": "code"
+    },
+    {
+      "tone": "green",
+      "subtitle": "Project Gamma",
+      "title": "Mobiliti App",
+      "description": "Fleet tracking and route optimization with a mobile-first UX and predictive scheduling.",
+      "tags": ["Flutter", "Node.js", "S3", "RDS", "CI/CD"],
+      "icon": "mobile"
+    },
+    {
+      "tone": "purple",
+      "subtitle": "Project Delta",
+      "title": "SecurePay API",
+      "description": "High-throughput payments with fraud detection and Stripe integration at scale.",
+      "tags": ["Node.js", "Redis", "NestJS", "PostgreSQL", "AWS"],
+      "icon": "folder"
+    },
+    {
+      "tone": "blue",
+      "subtitle": "Project Epsilon",
+      "title": "Aero-Logistics Suite",
+      "description": "Operations dashboard for air freight: shipment tracking, customs workflow, and alerts.",
+      "tags": ["Next.js", "tRPC", "PostgreSQL", "Mapbox", "BullMQ"],
+      "icon": "server"
+    },
+    {
+      "tone": "beige",
+      "subtitle": "Project Zeta",
+      "title": "Eco-Track Dashboard",
+      "description": "SaaS for carbon footprint tracking with role-based reports and compliance exports.",
+      "tags": ["Next.js 14", "D3.js", "PostgreSQL", "Tailwind"],
+      "icon": "spark"
+    },
+    {
+      "tone": "pink",
+      "subtitle": "Project Eta",
+      "title": "ClipNotes AI",
+      "description": "Browser extension that summarizes articles and captures notes with vector search.",
+      "tags": ["React", "Chrome", "OpenAI", "Pinecone", "Vite"],
+      "icon": "code"
+    },
+    {
+      "tone": "green",
+      "subtitle": "Project Theta",
+      "title": "Pulse Health Sync",
+      "description": "HL7/FHIR ingestion pipeline with scheduling, anomaly alerts, and audit trails.",
+      "tags": ["NestJS", "Redis", "PostgreSQL", "Docker", "AWS"],
+      "icon": "server"
+    },
+    {
+      "tone": "blue",
+      "subtitle": "Project Iota",
+      "title": "Lensroom Studio",
+      "description": "Collaborative design critique tool with canvas, comments, and version history.",
+      "tags": ["React", "Canvas API", "Yjs", "WebRTC", "S3"],
+      "icon": "mobile"
+    }
+  ]
+}
