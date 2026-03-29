@@ -23,6 +23,18 @@ function parseOrigins(raw: string): string[] {
     .filter(Boolean)
 }
 
+/** Vite / preview dev servers — both hostnames must be allowed or CORS fails (browser Origin must match ACAO exactly). */
+const LOCAL_DEV_ORIGINS = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:4173',
+  'http://127.0.0.1:4173',
+]
+
+function buildCorsAllowedOrigins(): string[] {
+  return [...new Set([...parseOrigins(FRONTEND_ORIGIN_RAW), ...LOCAL_DEV_ORIGINS])]
+}
+
 type SiteContent = {
   portfolio: Record<string, unknown>
   projects: unknown[]
@@ -175,10 +187,11 @@ async function main() {
   await ensureSeed()
 
   const app = express()
-  const origins = parseOrigins(FRONTEND_ORIGIN_RAW)
+  const allowedOrigins = buildCorsAllowedOrigins()
   app.use(
     cors({
-      origin: origins.length === 1 ? origins[0] : origins,
+      origin:
+        allowedOrigins.length === 1 ? allowedOrigins[0] : allowedOrigins,
       credentials: true,
     }),
   )
