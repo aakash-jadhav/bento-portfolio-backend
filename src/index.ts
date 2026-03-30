@@ -14,26 +14,6 @@ const TURSO_AUTH_TOKEN = (process.env.TURSO_AUTH_TOKEN ?? '').trim()
 const ADMIN_EMAIL = (process.env.ADMIN_EMAIL ?? '').trim()
 const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD ?? '').trim()
 const JWT_SECRET = (process.env.JWT_SECRET ?? '').trim()
-const FRONTEND_ORIGIN_RAW = (process.env.FRONTEND_ORIGIN ?? 'http://localhost:5173').trim()
-
-function parseOrigins(raw: string): string[] {
-  return raw
-    .split(',')
-    .map((s) => s.trim())
-    .filter(Boolean)
-}
-
-/** Vite / preview dev servers — both hostnames must be allowed or CORS fails (browser Origin must match ACAO exactly). */
-const LOCAL_DEV_ORIGINS = [
-  'http://localhost:5173',
-  'http://127.0.0.1:5173',
-  'http://localhost:4173',
-  'http://127.0.0.1:4173',
-]
-
-function buildCorsAllowedOrigins(): string[] {
-  return [...new Set([...parseOrigins(FRONTEND_ORIGIN_RAW), ...LOCAL_DEV_ORIGINS])]
-}
 
 type SiteContent = {
   portfolio: Record<string, unknown>
@@ -187,12 +167,12 @@ async function main() {
   await ensureSeed()
 
   const app = express()
-  const allowedOrigins = buildCorsAllowedOrigins()
   app.use(
     cors({
-      origin:
-        allowedOrigins.length === 1 ? allowedOrigins[0] : allowedOrigins,
-      credentials: true,
+      // Allow any origin. Since the frontend uses a bearer token (no cookies),
+      // we don't need to send CORS credentials.
+      origin: true,
+      credentials: false,
     }),
   )
   app.use(express.json({ limit: '2mb' }))
